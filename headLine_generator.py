@@ -77,6 +77,17 @@ def generate_headline(text,number_of_headlines = 4):
         For each set, create:
         - A primary headline (compelling, concise, under 10 words)
         - A secondary headline/subheading (if needed, providing additional context)
+
+        Give me in exactly the same JSON format as shown below:
+
+        [
+            {
+                "set_num": "Headline Set Number",
+                "primary": "Headline",
+                "secondary": "Subheading"
+            }
+        ]
+
         
         Guidelines:
         - Use active voice and strong verbs
@@ -129,34 +140,21 @@ def generate_headline(text,number_of_headlines = 4):
     
 
 
-""" FUNCTION TO PARSE HEADLINES FROM GENERATED TEXT"""
+
+""" SENTIMENT ANALYSIS OF HEADLINE"""
 """
-        INPUT: GENERATED TEXT
-        OUTPUT: PARSED HEADLINES
+        INPUT: HEADLINE
+        OUTPUT: SENTIMENT OF THE HEADLINE
 """
-def parse_headlines(headlines):
-    # Get headlines from generator
-    headlines = generate_headline(transcribe_audio("weather_report.mp3"))
-    if not headlines:
-        return None
+def analyze_sentiment(headline):
+    return None
+   
     
-    headline_sets = []
-    current_set = {}
-    for line in headlines.split('\n'):
-        if line.startswith('Set'):
-            if current_set:
-                headline_sets.append(current_set)
-            current_set = {'set_num': line.strip(':')}
-        elif line.startswith('Primary:'):
-            current_set['primary'] = line.replace('Primary:', '').strip()
-        elif line.startswith('Secondary:'):
-            current_set['secondary'] = line.replace('Secondary:', '').strip()
-    if current_set:
-        headline_sets.append(current_set)
 
-    return headline_sets
 
-print(parse_headlines(generate_headline(transcribe_audio("weather_report.mp3")))[0])
+
+
+
 
 
 
