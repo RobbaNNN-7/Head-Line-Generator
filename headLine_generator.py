@@ -139,7 +139,7 @@ def generate_headline(text,number_of_headlines = 4):
         return None
     
 
-
+print(generate_headline(""));
 
 """ SENTIMENT ANALYSIS OF HEADLINE"""
 """
