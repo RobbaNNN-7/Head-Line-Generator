@@ -141,7 +141,7 @@ def generate_headline(text,number_of_headlines = 4):
 
 print(generate_headline(""));
 
-""" SENTIMENT ANALYSIS OF HEADLINE"""
+""" TODO : SENTIMENT ANALYSIS OF HEADLINE"""
 """
         INPUT: HEADLINE
         OUTPUT: SENTIMENT OF THE HEADLINE
